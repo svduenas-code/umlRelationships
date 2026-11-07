@@ -1,0 +1,46 @@
+class Rectangle:
+    def __init__(self, width, height):
+        self._width = width
+        self._height = height
+
+    @property
+    def width(self):
+        return self._width
+
+    @property
+    def height(self):
+        return self._height
+
+    @width.setter
+    def width(self, new_width):
+        if new_width > 0:
+            self._width = new_width
+        else:
+            print("Width must be greater than zero")
+
+    @height.setter
+    def height(self, new_height):
+        if new_height > 0:
+            self._height = new_height
+        else:
+            print("Height must be greater than zero")
+
+
+# Create a Rectangle object
+rectangle1 = Rectangle(3, 4)
+
+# Display the dimensions
+print("Width:", rectangle1.width)
+print("Height:", rectangle1.height)
+
+# Change the dimensions
+rectangle1.width = 5
+rectangle1.height = 6
+
+# Display the updated dimensions
+print("Updated Width:", rectangle1.width)
+print("Updated Height:", rectangle1.height)
+
+2.) Using @property makes the code easier to read because we can access and change private
+attributes like regular variables without calling separate getter and setter methods.
+It also allows us to validate values before changing them, making the code cleaner and safer.
