@@ -40,3 +40,21 @@ student1 = Student("Lina", 20)
 print(f"Name: {student1.name}")
 print(f"Age: {student1.get_age()} (note this age is privately accessed)")
 student1.study()
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.__age = age # Private attribute
+
+    def get_age(self):
+        return self.__age
+
+class Teacher(Person):
+    def teach(self):
+        print(f"{self.name} is teaching")
+
+teacher1 = Teacher("Mona", 30)
+
+print(f"Name: {teacher1.name}")
+print(f"Age: {teacher1.get_age()}")
+teacher1.teach()
